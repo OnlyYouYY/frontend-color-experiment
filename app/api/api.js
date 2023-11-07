@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api";
+//const API_URL = "http://localhost:3000/api";
+const API_URL = "https://backend-mongo-layers.vercel.app/api";
 
 export async function fetchColors() {
     try {
