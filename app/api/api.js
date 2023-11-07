@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const API_URL = 'https://backend-mongo-layers.vercel.app/api'
+const API_URL = "http://localhost:3000/api";
 
 export async function fetchColors() {
     try {
         const response = await fetch(`${API_URL}/colors/`);
         if (!response.ok) {
-            throw new Error('Error al obtener datos de la API');
-
+            throw new Error("Error al obtener datos de la API");
         }
         return await response.json();
     } catch (error) {
@@ -15,12 +14,11 @@ export async function fetchColors() {
     }
 }
 
-
 export async function fetchMessage() {
     try {
         const response = await fetch(`${API_URL}/messages/`);
         if (!response.ok) {
-            throw new Error('Error al obtener las frases');
+            throw new Error("Error al obtener las frases");
         }
         return await response.json();
     } catch (error) {
@@ -31,9 +29,9 @@ export async function fetchMessage() {
 export async function postReaction(data) {
     try {
         const response = await fetch(`${API_URL}/reactions/createReaction`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         });
@@ -51,11 +49,11 @@ export async function postReaction(data) {
 
 export async function getIpAddress() {
     try {
-        const response = await axios.get('https://api.ipify.org?format=json');
+        const response = await axios.get("https://api.ipify.org?format=json");
         const ipAddress = response.data.ip;
         return ipAddress;
     } catch (error) {
-        console.error('Error al obtener la dirección IP:', error);
+        console.error("Error al obtener la dirección IP:", error);
         return null;
     }
 }

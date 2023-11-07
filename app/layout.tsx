@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Colors experiment',
-  description: 'Pagina para registrar el voto de cada usuario para luego analizarlos.',
+  description: 'Pagina para registrar el voto de cada usuario para luego analizar los resultados.',
 }
 
 export default function RootLayout({
