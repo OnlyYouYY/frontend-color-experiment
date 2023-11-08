@@ -25,7 +25,7 @@ export default function Home() {
   const [gender, setGender] = useState(null);
   const [ip, setIp] = useState("");
   const [date, setDate] = useState("");
-  const [reaction, setReaction] = useState(0);
+  const [reaction, setReaction] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [randomMessage, setRandomMessage] = useState([0]);
   const [colors, setColors] = useState<Color[]>([]);
@@ -103,13 +103,13 @@ export default function Home() {
   };
 
   const handleLike = () => {
-    setReaction(1);
-    handleSubmit();
+    setReaction(true);
+    handleSubmit(true);
   };
 
   const handleDislike = () => {
-    setReaction(0);
-    handleSubmit();
+    setReaction(false);
+    handleSubmit(false);
   };
 
   const backgroundColorIndex = getCurrentColorCode(0);
@@ -117,14 +117,14 @@ export default function Home() {
   const messageRandom = getCurrentMessage(0);
 
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (reactionValue:any) => {
     const data = {
       ip: ip,
       date: date,
       textColor: textColorIndex,
       textBackground: backgroundColorIndex,
       message: messageRandom,
-      reaction: reaction,
+      reaction: reactionValue,
       couple: isCouple,
       gender: gender,
     };
