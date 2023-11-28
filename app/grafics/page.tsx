@@ -15,8 +15,8 @@ const MyChartComponent: React.FC = () => {
     // Regresión lineal
     const linearRegression = regression.linear(x.map((val, i) => [val, y[i]]));
 
-    // Regresión exponencial
-    const exponentialRegression = regression.exponential(x.map((val, i) => [val, y[i]]));
+     // Regresión logarítmica
+     const logarithmicRegression = regression.logarithmic(x.map((val, i) => [val, y[i]]));
 
     // Regresión polinómica
     const polynomialRegression = regression.polynomial(x.map((val, i) => [val, y[i]]), { order: 2 });
@@ -44,8 +44,8 @@ const MyChartComponent: React.FC = () => {
               showLine: true,
             },
             {
-              label: 'Regresión Exponencial',
-              data: exponentialRegression.points.map(point => ({ x: point[0], y: point[1] })),
+              label: 'Regresión Logarítmica',
+              data: logarithmicRegression.points.map(point => ({ x: point[0], y: point[1] })),
               borderColor: 'green',
               backgroundColor: 'transparent',
               showLine: true,
