@@ -9,8 +9,8 @@ const MyChartComponent: React.FC = () => {
 
   useEffect(() => {
     // Datos para la regresión
-    const x: number[] = [1, 2, 3, 4, 5, 6, 7];
-    const y: number[] = [154, 134, 156, 143, 12, 8, 14];
+    const x: number[] = [59, 19, 160, 5, 27, 3, 11];
+    const y: number[] = [0, 1, 2, 6, 8, 17, 18];
 
     // Regresión lineal
     const linearRegression = regression.linear(x.map((val, i) => [val, y[i]]));
