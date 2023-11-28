@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto'; 
+import Chart from 'chart.js/auto';
 import regression from 'regression';
 
 const MyChartComponent: React.FC = () => {
@@ -9,8 +9,8 @@ const MyChartComponent: React.FC = () => {
 
   useEffect(() => {
     // Datos para la regresión
-    const x: number[] = [59, 19, 160, 5, 27, 3, 11];
-    const y: number[] = [0, 1, 2, 6, 8, 17, 18];
+    const x: number[] = [0, 1, 2, 6, 8, 17, 18];
+    const y: number[] = [1, 2, 3, 4, 5, 6, 7];
 
     // Regresión lineal
     const linearRegression = regression.linear(x.map((val, i) => [val, y[i]]));
@@ -23,7 +23,7 @@ const MyChartComponent: React.FC = () => {
 
     // Configuración del gráfico
     const ctx = chartRef.current?.getContext('2d');
-    
+
     if (ctx) {
       new Chart(ctx, {
         type: 'scatter',
