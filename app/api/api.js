@@ -58,3 +58,14 @@ export async function getIpAddress() {
         return null;
     }
 }
+
+
+export async function getPredicted(){
+    try {
+        const response = await axios.get(`${API_URL}/reactions/predicted`);
+        return await response.json();
+    } catch (error) {
+        console.error("Error al obtener los datos", error);
+        return null;
+    }
+}
